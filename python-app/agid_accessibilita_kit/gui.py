@@ -89,7 +89,15 @@ class App(tk.Tk):
         for k, v in files.items():
             lines.append(f"- {k}: {v}")
         self._set_out("\n".join(lines))
-        messagebox.showinfo("Completato", "File generati correttamente.")
+        if "accessibilita-bozze.pdf" not in files:
+            lines2 = [
+                "File generati correttamente.",
+                "",
+                "Nota: PDF non creato. Per esportare in PDF via docx2pdf spesso serve Microsoft Word installato.",
+            ]
+            messagebox.showinfo("Completato", "\n".join(lines2))
+        else:
+            messagebox.showinfo("Completato", "File generati correttamente.")
 
 
 def main() -> int:

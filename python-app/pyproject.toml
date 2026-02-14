@@ -11,6 +11,11 @@ requires-python = ">=3.10"
 license = { text = "MIT" }
 authors = [{ name = "Germano Costi" }]
 keywords = ["agid", "accessibilita", "italia", "dichiarazione", "feedback", "wcag", "eaa"]
+dependencies = [
+  "python-docx>=1.1.2",
+  "mammoth>=1.9.0",
+  "docx2pdf>=0.1.8",
+]
 classifiers = [
   "Programming Language :: Python :: 3",
   "License :: OSI Approved :: MIT License",
@@ -28,4 +33,3 @@ agid-accessibilita-gui = "agid_accessibilita_kit.gui:main"
 
 [tool.setuptools.packages.find]
 where = ["."]
-

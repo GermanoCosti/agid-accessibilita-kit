@@ -10,6 +10,7 @@ from agid_accessibilita_kit.templates import (
     render_feedback_html,
     render_footer_snippet,
 )
+from agid_accessibilita_kit.export import export_docx, export_html_from_docx, export_pdf_from_docx
 
 
 @dataclass(frozen=True)
@@ -58,4 +59,27 @@ def write_project(cfg: Config) -> dict[str, str]:
         encoding="utf-8",
     )
     files["agid-accessibilita.config.json"] = str(config_path)
+
+    # Output "ufficio": DOCX + export HTML/PDF (opzionali).
+    # Nota: PDF richiede Microsoft Word se usi docx2pdf.
+    docx_path = out_dir / "accessibilita-bozze.docx"
+    files["accessibilita-bozze.docx"] = str(export_docx(
+        {
+            "ente": cfg.ente,
+            "sito": cfg.sito,
+            "email": cfg.email,
+            "basePath": cfg.base_path,
+        },
+        str(docx_path),
+    ))
+
+    html_path = out_dir / "accessibilita-bozze.html"
+    files["accessibilita-bozze.html"] = str(export_html_from_docx(str(docx_path), str(html_path)))
+
+    # PDF: se fallisce, non bloccare la generazione.
+    try:
+        pdf_path = out_dir / "accessibilita-bozze.pdf"
+        files["accessibilita-bozze.pdf"] = str(export_pdf_from_docx(str(docx_path), str(pdf_path)))
+    except Exception as exc:  # noqa: BLE001
+        files["accessibilita-bozze.pdf"] = f"NON CREATO: {exc}"
     return files

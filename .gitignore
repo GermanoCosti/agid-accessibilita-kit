@@ -6,3 +6,4 @@ python-app/__pycache__/
 python-app/*.spec
 python-app/build/
 python-app/dist/
+python-app/*.egg-info/

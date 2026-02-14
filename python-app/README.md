@@ -15,6 +15,11 @@ python -m pip install -e .
 agid-accessibilita-kit-py init --out-dir .\\accessibilita
 ```
 
+Output generati:
+- `accessibilita-bozze.docx`
+- `accessibilita-bozze.html`
+- `accessibilita-bozze.pdf` (se possibile: spesso richiede Microsoft Word)
+
 ## Uso GUI
 ```powershell
 agid-accessibilita-gui
@@ -25,4 +30,3 @@ agid-accessibilita-gui
 python -m pip install -r requirements-dev.txt
 python -m PyInstaller --onefile --windowed --name agid-accessibilita-gui .\\agid_accessibilita_kit\\gui.py
 ```
-
