@@ -43,4 +43,3 @@ Se ti e' utile:
 
 ## Licenza
 MIT
-
