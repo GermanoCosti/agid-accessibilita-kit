@@ -1,0 +1,5 @@
+node_modules/
+*.log
+accessibilita/
+agid-accessibilita.config.json
+

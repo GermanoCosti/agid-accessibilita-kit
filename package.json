@@ -1,0 +1,22 @@
+{
+  "name": "@germanocosti/agid-accessibilita-kit",
+  "version": "0.1.0",
+  "description": "Generatore (Italia) di pagina dichiarazione accessibilita + feedback + snippet footer (bozze, non consulenza legale).",
+  "type": "module",
+  "bin": {
+    "agid-accessibilita-kit": "src/cli.js"
+  },
+  "scripts": {
+    "test": "node tests/run.js"
+  },
+  "keywords": [
+    "agid",
+    "accessibilita",
+    "italia",
+    "eaa",
+    "wcag",
+    "dichiarazione di accessibilita"
+  ],
+  "license": "MIT"
+}
+
