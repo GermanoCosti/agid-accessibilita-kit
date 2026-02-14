@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "agid-accessibilita-kit-germanocosti"
+version = "0.1.0"
+description = "Generatore (Italia) di bozze: dichiarazione accessibilita + feedback + snippet footer + checklist."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Germano Costi" }]
+keywords = ["agid", "accessibilita", "italia", "dichiarazione", "feedback", "wcag", "eaa"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+]
+
+[project.urls]
+Homepage = "https://github.com/GermanoCosti/agid-accessibilita-kit"
+Repository = "https://github.com/GermanoCosti/agid-accessibilita-kit"
+Issues = "https://github.com/GermanoCosti/agid-accessibilita-kit/issues"
+
+[project.scripts]
+agid-accessibilita-kit-py = "agid_accessibilita_kit.cli:main"
+agid-accessibilita-gui = "agid_accessibilita_kit.gui:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+

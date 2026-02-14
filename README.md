@@ -37,6 +37,14 @@ agid-accessibilita-kit init --out-dir .\\public\\accessibilita
 - `CHECKLIST.md`
 - `agid-accessibilita.config.json` (config salvata)
 
+## Versione Python (GUI)
+Se vuoi una interfaccia grafica:
+```powershell
+cd python-app
+python -m pip install -e .
+agid-accessibilita-gui
+```
+
 ## Supporto / Donazioni
 Se ti e' utile:
 - `docs/sostieni-il-progetto.md`
